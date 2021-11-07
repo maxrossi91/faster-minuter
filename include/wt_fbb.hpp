@@ -82,7 +82,7 @@ class wt_fbb {
     typedef std::uint64_t size_type;
     using alphabet_category = sdsl::byte_alphabet_tag;
 
-  private:
+  protected:
 #ifndef ALLOW_VARIABLE_BLOCK_SIZE
     static const std::uint64_t k_block_size_log;
     static const std::uint64_t k_block_size;
@@ -168,7 +168,7 @@ class wt_fbb {
       shi.m_rank_support.set_vector(&shi.m_bitvector);
     }
 
-  private:
+  protected:
     std::uint64_t m_size;                                      // original sequence length
     std::vector<std::uint64_t> m_count;                        // global symbol counts
     std::vector<std::uint64_t> m_hyperblock_rank;              // ranks at hyperblock boundary
@@ -209,7 +209,7 @@ class wt_fbb {
       init(text, text_length);
     }
 
-  private:
+  protected:
     static void compute_symbol_freq(
         const std::uint8_t *text,
         std::uint64_t text_length,
